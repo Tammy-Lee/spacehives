@@ -8,6 +8,7 @@ Created on Tue Oct  4 02:56:14 2016
 import requests
 import json
 
+
 doc_jd = requests.get('https://sclub.jd.com/comment/productPageComments.action?productId=2426559&score=0&sortType=3&page=0&pageSize=10&callback=fetchJSON_comment98vv2717').text
 doc_jd = doc_jd[len('fetchJSON_comment98vv2717('):-2]
 
@@ -27,11 +28,10 @@ j_doc = json.loads(doc_jd)
 
 r3 = requests.get('https://sclub.jd.com/comment/productPageComments.action?productId=2426559&score=0&sortType=3&page=0&pageSize=10&callback=fetchJSON_comment98vv2717')
 doc3 = r3.text
-j_doc3 = json.loads(doc3[len('fetchJSON_comment98vv2717('):-2])
 
 data = {}
 
-#data['pid'] = '121319824718241412'
-#data['pname'] = u'按单卡的'
+data['pid'] = '121319824718241412'
+data['pname'] = u'按单卡的'
 #...
 #db.projects.update({}, {'$set': data}, True)
